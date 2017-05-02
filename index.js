@@ -63,7 +63,7 @@ class YouTubePlayer extends EventEmitter {
       keyboard: true,
       fullscreen: true,
       annotations: true,
-      modestBranding: false,
+      modestbranding: false,
       related: true,
       info: true,
       timeupdateFrequency: 1000
