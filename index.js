@@ -304,7 +304,16 @@ class YouTubePlayer extends EventEmitter {
         //   - controls=2 – Player controls display in the player. For IFrame
         //                  embeds, the controls display and the Flash player
         //                  loads after the user initiates the video playback.
-        controls: opts.controls ? 2 : 0,
+        controls: opts.controls ? opts.controls : 2,
+
+        //This parameter sets the start time for the loaded player
+        start: opts.start ? opts.start : 0,
+
+
+        //This parameter sets the end time for the loaded player
+        end: opts.end != null
+          ? opts.end ? opts.end : 1
+          : undefined, // default to not setting this option
 
         // Setting the parameter's value to 1 causes the player to not respond to
         // keyboard controls. The default value is 0, which means that keyboard
@@ -315,7 +324,7 @@ class YouTubePlayer extends EventEmitter {
         //  controlled via IFrame or JavaScript Player API calls. The default
         //  value is 0, which means that the player cannot be controlled using
         //  those APIs.
-        enablejsapi: 1,
+        enablejsapi: opts.enablejsapi ? 1 : 0,
 
         // Setting this parameter to 0 prevents the fullscreen button from
         // displaying in the player. The default value is 1, which causes the
@@ -332,7 +341,7 @@ class YouTubePlayer extends EventEmitter {
         // from displaying in the control bar. Note that a small YouTube text
         // label will still display in the upper-right corner of a paused video
         // when the user's mouse pointer hovers over the player.
-        modestbranding: 1,
+        modestbranding: opts.modestbranding ? 1 : 0,
 
         // This parameter provides an extra security measure for the IFrame API
         // and is only supported for IFrame embeds. If you are using the IFrame
@@ -346,7 +355,7 @@ class YouTubePlayer extends EventEmitter {
         //        default value, though the default is subject to change.
         //   - 1: This value causes inline playback for UIWebViews created with
         //        the allowsInlineMediaPlayback property set to TRUE.
-        playsinline: 1,
+        playsinline: opts.playsinline ? 1 : 0,
 
         // This parameter indicates whether the player should show related videos
         // when playback of the initial video ends. Supported values are 0 and 1.
