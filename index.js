@@ -401,6 +401,7 @@ class YouTubePlayer extends EventEmitter {
       this.load(this.videoId)
     }
 
+    this.emit('onReady')
     this._flushQueue()
   }
 
