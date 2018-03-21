@@ -198,6 +198,8 @@ class YouTubePlayer extends EventEmitter {
   }
 
   destroy () {
+    this.emit('destroyed');
+
     this._destroy()
   }
 
