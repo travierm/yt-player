@@ -1,6 +1,8 @@
 const EventEmitter = require('events').EventEmitter
 const loadScript = require('load-script2')
 
+EventEmitter.setMaxListeners(0);
+
 const YOUTUBE_IFRAME_API_SRC = 'https://www.youtube.com/iframe_api'
 
 const YOUTUBE_STATES = {
