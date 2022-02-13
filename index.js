@@ -48,6 +48,11 @@ class YouTubePlayer extends EventEmitter {
     const elem = typeof element === 'string'
       ? document.querySelector(element)
       : element
+    
+    if(!elem) {
+      console.error("YoutubePlayer: Could not find element", elem)
+      return false
+    }
 
     if (elem.id) {
       this._id = elem.id // use existing element id
