@@ -504,4 +504,4 @@ class YouTubePlayer extends EventEmitter {
   }
 }
 
-module.exports = YouTubePlayer
+export default YouTubePlayer
